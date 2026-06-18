@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Empirical Lab
 
 Game-based empirical economics training for causal inference, panel data, data acquisition, and research workflows.
@@ -68,3 +69,6 @@ Industrial Brutalism aesthetic with two modes:
 - **Light mode**: Swiss Industrial Print, matte paper, heavy rules, sharp geometry
 
 All corners are 90 degrees. No gradients, no shadows, no border-radius.
+=======
+# empirical-lab
+>>>>>>> 311870768f27b10b36b2af3d812d85d455831e80
