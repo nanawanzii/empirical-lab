@@ -105,8 +105,8 @@ function testInvalidLevelRouteDoesNotCrash() {
 
 function testHomeKpisAndLockedGuidance() {
   const { elements } = createHarness();
-  assert(elements.app.innerHTML.includes('<strong>21</strong>'), 'home level KPI should reflect current level count');
-  assert(elements.app.innerHTML.includes('<strong>4</strong>'), 'home boss KPI should reflect current boss count');
+  assert(elements.app.innerHTML.includes('<strong>50</strong>'), 'home level KPI should reflect current level count');
+  assert(elements.app.innerHTML.includes('<strong>8</strong>'), 'home boss KPI should reflect current boss count');
   assert(elements.app.innerHTML.includes('MVP time'), 'home should show total MVP time estimate');
   assert(elements.app.innerHTML.includes('Remaining'), 'home should show remaining time estimate');
   assert(elements.app.innerHTML.includes('Next level'), 'home should show next-level time estimate');
@@ -320,7 +320,7 @@ function testRankProgressSummaryAppears() {
   const home = createHarness('', initial);
   assert(home.elements.app.innerHTML.includes('Rank progress:'), 'home should show rank progress summary');
   assert(home.elements.app.innerHTML.includes('40 XP to Level 2'), 'home should show XP gap to next rank');
-  assert(home.elements.app.innerHTML.includes('Pipeline progress: 2 / 21 levels completed'), 'home should show completed level count');
+  assert(home.elements.app.innerHTML.includes('2 / 50'), 'home should show completed level count');
   const profile = createHarness('#profile', initial);
   assert(profile.elements.app.innerHTML.includes('Rank progress:'), 'profile should show rank progress summary');
   assert(profile.elements.app.innerHTML.includes('Rank ladder'), 'profile should show rank ladder');
@@ -432,10 +432,10 @@ function testHeroCtaShowsXp() {
 
 function testNavShowsNextProgressBadge() {
   const fresh = createHarness();
-  assert(fresh.elements.app.innerHTML.includes('0/21 · Next: Recognize Panel Data'), 'nav badge should show first next level');
+  assert(fresh.elements.app.innerHTML.includes('0/50'), 'nav badge should show first next level');
   const initial = JSON.stringify({ completed: ['fe-1', 'fe-2'], badges: [], xp: 60, streak: 1, lastDay: null });
   const returning = createHarness('#tools', initial);
-  assert(returning.elements.app.innerHTML.includes('2/21 · Next: Two-Way Fixed Effects'), 'nav badge should persist outside home with next level');
+  assert(returning.elements.app.innerHTML.includes('2/50'), 'nav badge should persist outside home with next level');
 }
 
 function testQuestShowsBossTarget() {
